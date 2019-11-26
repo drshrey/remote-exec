@@ -115,7 +115,7 @@ class App extends React.Component {
         <Card style={{
             padding: 15,
             backgroundColor: "white",
-            position: "absolute",
+            position: "fixed",
             bottom: 0,
             width: "100%",
             textAlign: "center",
