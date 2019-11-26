@@ -87,7 +87,7 @@ class LandingPage extends React.Component {
                             textAlign: "center"
                         }}>
                             Receive events on your script's status as well
-                            as a link to view streaming logs of it's execution.
+                            as a link to view streaming logs of its execution.
                         </p>
                     </Card>                                                         
                 </div>
