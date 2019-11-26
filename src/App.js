@@ -94,35 +94,38 @@ class NotFound extends React.Component {
 class App extends React.Component {
   render(){
     return (
-      <div style={{
-        backgroundColor: "#48AFF0",
-        minHeight: "100vh",
-        width: "100%",
-      }}>
-        <Header {...this.props} />
-        <Router>
-          <Switch>        
-            <Route exact path="/" >
-              <LandingPage />
-            </Route>
-            <Route path="/auth">
-              <Auth />
-            </Route>              
-            <NotFound />
-          </Switch>
-        </Router>         
-        <Card style={{
-            padding: 15,
+      <div>
+        <div style={{
+          backgroundColor: "#48AFF0",
+          minHeight: "100vh",
+          width: "100%",
+          paddingBottom: 15
+        }}>
+          <Header {...this.props} />
+          <Router>
+            <Switch>        
+              <Route exact path="/" >
+                <LandingPage />
+              </Route>
+              <Route path="/auth">
+                <Auth />
+              </Route>              
+              <NotFound />
+            </Switch>
+          </Router>                   
+        </div> 
+        <div style={{
             textAlign: "center",
-            position: "absolute",
-            bottom: 0,
             backgroundColor: "white",
-            width: "100%",            
+            width: "100%", 
+            height: "100%",
+            paddingTop: 20,
+            paddingBottom: 20,
         }}>
           <p>Made in San Francisco, California.</p>
           <p>Contact <a href="mailto:hello@remote.exec">hello@remote.exec</a> for more info.</p>
-        </Card>            
-      </div>     
+        </div>            
+      </div>  
     );
   }
 }
