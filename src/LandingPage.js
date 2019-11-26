@@ -10,6 +10,7 @@ class LandingPage extends React.Component {
         return (
             <div style={{
                 margin: 30,
+                height: "100%",
             }}>
                 <h1 style={{
                     margin: "auto",

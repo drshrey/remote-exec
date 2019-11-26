@@ -96,8 +96,7 @@ class App extends React.Component {
     return (
       <div style={{
         backgroundColor: "#48AFF0",
-        position: "absolute",
-        height: "100%",
+        minHeight: "100vh",
         width: "100%",
       }}>
         <Header {...this.props} />
@@ -111,19 +110,19 @@ class App extends React.Component {
             </Route>              
             <NotFound />
           </Switch>
-        </Router>
+        </Router>         
         <Card style={{
             padding: 15,
-            backgroundColor: "white",
-            position: "fixed",
-            bottom: 0,
-            width: "100%",
             textAlign: "center",
+            position: "absolute",
+            bottom: 0,
+            backgroundColor: "white",
+            width: "100%",            
         }}>
-          <p>Made in San Francisco.</p>
+          <p>Made in San Francisco, California.</p>
           <p>Contact <a href="mailto:hello@remote.exec">hello@remote.exec</a> for more info.</p>
         </Card>            
-      </div>
+      </div>     
     );
   }
 }
