@@ -8,7 +8,7 @@ import {
     Card,
     FormGroup,
     InputGroup,
-    Button
+    Button,
 } from '@blueprintjs/core';
 
 class SignIn extends React.Component {

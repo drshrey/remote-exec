@@ -15,6 +15,7 @@ import {
   Button,
   Card,
   Classes,
+  Icon
 } from '@blueprintjs/core';
 
 import LandingPage from './LandingPage';
@@ -61,9 +62,11 @@ class Header extends React.Component {
       <Navbar>
         <NavbarGroup>
           <NavbarHeading>
+            <Icon icon={"console"} />
             <a 
               style={{
                 textDecoration: "none",
+                marginLeft: 7,
               }}
             href="/"><code>Remote Exec</code></a>
           </NavbarHeading>
