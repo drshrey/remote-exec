@@ -1,6 +1,7 @@
 import React from 'react'
 import {
-    Card
+    Card,
+    Button
 } from '@blueprintjs/core';
 
 
@@ -9,14 +10,13 @@ class LandingPage extends React.Component {
         return (
             <div style={{
                 margin: 30,
-                height: "100vh",
             }}>
                 <h1 style={{
                     margin: "auto",
                     textAlign: "center",
                     fontSize: 45
                 }} className="bp3-heading">
-                    remote exec
+                    Remote Exec
                 </h1>
                 <br/>
                 <h2 style={{
@@ -66,8 +66,8 @@ class LandingPage extends React.Component {
                         <p style={{
                             textAlign: "center"
                         }}>
-                            Tie a Github repository to be your 
-                            source of truth.
+                            Tie a GitHub repository to be your 
+                            source of truth for all your scripts.
                         </p>
                     </Card>
                     <Card style={{
@@ -87,9 +87,14 @@ class LandingPage extends React.Component {
                             textAlign: "center"
                         }}>
                             Receive events on your script's status as well
-                            as a link to view streaming logs of the script's execution.
+                            as a link to view streaming logs of it's execution.
                         </p>
-                    </Card>                                        
+                    </Card>                                                         
+                </div>
+                <div style={{ textAlign: "center", marginTop: 20 }}>
+                    <Button intent="primary" style={{ fontSize: 22, padding: 15 }}>
+                        Get Started
+                    </Button>                   
                 </div>
             </div>
         )

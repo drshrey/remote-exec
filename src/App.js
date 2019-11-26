@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import {
+  BrowserRouter as Router,
   Switch,
   Route,
   Link
@@ -17,6 +18,7 @@ import {
 } from '@blueprintjs/core';
 
 import LandingPage from './LandingPage';
+import Auth from './Auth';
 
 class Header extends React.Component {
   constructor(props){
@@ -37,13 +39,15 @@ class Header extends React.Component {
       return (
         <div style={{ position: "absolute", right: 25 }}>
           <Button 
+            onClick={() => {window.location.href = '/auth/sign-in'}}
             text="Sign In" 
             intent="primary"
             style={{ marginRight: 10 }}
           />     
           or
           <Button 
-            text="Register" 
+            onClick={() => {window.location.href = '/auth/signup'}}
+            text="Sign Up" 
             intent="primary"
             style={{ marginLeft: 10 }}            
           />                        
@@ -57,7 +61,11 @@ class Header extends React.Component {
       <Navbar>
         <NavbarGroup>
           <NavbarHeading>
-            <Link to="/"><code>remote exec</code></Link>
+            <a 
+              style={{
+                textDecoration: "none",
+              }}
+            href="/"><code>Remote Exec</code></a>
           </NavbarHeading>
           <NavbarDivider />
           {this.renderHeaderAuthInformationView()}
@@ -67,21 +75,47 @@ class Header extends React.Component {
   }
 }
 
+class NotFound extends React.Component {
+  render() {
+    return (
+      <div style={{
+        textAlign: "center"
+      }}>
+        <h1> 404 Not Found </h1>
+        <h3> This page does not exist. Please try again with a different url.</h3>
+      </div>
+    )
+  }
+}
+
 class App extends React.Component {
   render(){
     return (
       <div style={{
-        backgroundColor: "#669EFF",
+        backgroundColor: "#48AFF0",
+        position: "absolute",
+        height: "100%",
+        width: "100%",
       }}>
         <Header {...this.props} />
-        <Switch>
-          <Route>
-            <LandingPage path="/" />
-          </Route>
-        </Switch>
+        <Router>
+          <Switch>        
+            <Route exact path="/" >
+              <LandingPage />
+            </Route>
+            <Route path="/auth">
+              <Auth />
+            </Route>              
+            <NotFound />
+          </Switch>
+        </Router>
         <Card style={{
             padding: 15,
             backgroundColor: "white",
+            position: "absolute",
+            bottom: 0,
+            width: "100%",
+            textAlign: "center",
         }}>
           <p>Made in San Francisco.</p>
           <p>Contact <a href="mailto:hello@remote.exec">hello@remote.exec</a> for more info.</p>
